@@ -6,11 +6,7 @@
  * @param dayOfBirth - the birth day of the month
  * @returns the correct age
  */
-export function calculateAge(
-  yearOfBirth: number,
-  monthOfBirthIndex: number,
-  dayOfBirth: number
-): number {
+export function calculateAge(yearOfBirth: number, monthOfBirthIndex: number, dayOfBirth: number): number {
   const now = new Date();
   const birthDate = new Date(yearOfBirth, monthOfBirthIndex, dayOfBirth);
 
