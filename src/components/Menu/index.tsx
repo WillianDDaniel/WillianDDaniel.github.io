@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function Menu() {
   const { t } = useTranslation();
@@ -7,10 +8,12 @@ export default function Menu() {
     <ul className="
       flex pr-8 items-center gap-6 text-gray-800 dark:text-gray-200 font-normal
     ">
-      <li>{t("menu.home")}</li>
-      <li>{t("menu.about")}</li>
-      <li>{t("menu.projects")}</li>
-      <li>{t("menu.contact")}</li>
+      <li><a href="#hero">{t("menu.home")}</a></li>
+      <li><a href="#about">{t("menu.about")}</a></li>
+      <li><a href="#projects">{t("menu.projects")}</a></li>
+      <li><a href="#contact">{t("menu.contact")}</a></li>
+
+      <li><LanguageSwitcher /></li>
     </ul>
   )
 }

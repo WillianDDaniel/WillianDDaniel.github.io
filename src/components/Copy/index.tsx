@@ -1,0 +1,56 @@
+import { useTranslation } from "react-i18next";
+
+export default function Copy() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="z-10 flex-1 flex flex-col justify-center items-start text-left">
+      <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100/80 border border-zinc-200 text-xs font-medium text-zinc-600">
+        <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        {t("hero.availability")}
+      </div>
+
+      <span className="text-xl ml-0.5 text-zinc-600 font-medium">
+        {t("hero.description")}
+      </span>
+
+      <h1 className="text-4xl font-bold tracking-tight leading-tight">
+        {t("hero.descriptionHighlight")}
+      </h1>
+
+      <p className="mt-5 text-lg text-zinc-500 max-w-lg leading-relaxed">
+        {t("hero.subtext")}
+      </p>
+
+      <div className="flex flex-wrap items-center gap-4 mt-8">
+        <button
+          className="
+            font-medium cursor-pointer bg-zinc-900 text-white px-6 py-2.5
+            rounded-md hover:bg-zinc-800 transition-colors duration-300
+            shadow-sm flex items-center gap-2
+          "
+        >
+          {t("hero.cta-button-cv")}
+          <svg xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12V4m0 8l-3-3m3 3l3-3"
+            />
+          </svg>
+        </button>
+
+        <button
+          className="
+            font-medium cursor-pointer bg-white text-zinc-900 px-6 py-2.5
+            border border-zinc-200 rounded-md hover:bg-zinc-50 transition-colors duration-300
+            shadow-sm flex items-center gap-2
+          "
+        >
+          {t("hero.cta-button-projects")}
+        </button>
+      </div>
+    </div>
+  )
+};

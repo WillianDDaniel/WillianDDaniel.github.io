@@ -4,8 +4,8 @@ export default function Card({ project }: { project: Project }) {
   if (!ptContent) return null;
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm border
-      border-white/20 rounded-xl overflow-hidden hover:transform
+    <div className="bg-white/10 backdrop-blur-sm border-t-3
+      border-zinc-900 rounded-xl overflow-hidden hover:transform
       hover:scale-[1.02] transition-all duration-300 flex flex-col"
     >
       <div className="h-48 overflow-hidden shrink-0">

@@ -91,31 +91,33 @@ export default function Terminal() {
   };
 
   return (
-    <div className="scale-y-95 w-full max-w-xl xl:max-w-2xl rounded-xl overflow-hidden bg-white border border-zinc-200 shadow-xl">
-      <div className="relative flex items-center px-4 py-2 bg-zinc-100 border-b border-zinc-200">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+    <div className="z-10 flex-1 rounded-br-xl border-zinc-200 flex items-center justify-end">
+      <div className="scale-y-95 w-full max-w-xl xl:max-w-2xl rounded-xl overflow-hidden bg-white border border-zinc-200 shadow-xl">
+        <div className="relative flex items-center px-4 py-2 bg-zinc-100 border-b border-zinc-200">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+          </div>
+          <span className="absolute left-1/2 -translate-x-1/2 text-zinc-500 text-xs font-mono font-medium">
+            portfolio.tsx
+          </span>
         </div>
-        <span className="absolute left-1/2 -translate-x-1/2 text-zinc-500 text-xs font-mono font-medium">
-          portfolio.tsx
-        </span>
-      </div>
 
-      <div className="p-6 text-[13px] leading-6 font-mono bg-gray-50 h-[calc(100vh-12rem)]">
-        {CODE_LINES.slice(0, typingState.lineIdx).map((line, idx) => (
-          <span key={idx} className="block whitespace-pre">
-            {renderLine(line)}
-          </span>
-        ))}
+        <div className="p-6 pl-10 text-[13px] leading-6 font-mono bg-gray-50 h-[calc(100vh-12rem)]">
+          {CODE_LINES.slice(0, typingState.lineIdx).map((line, idx) => (
+            <span key={idx} className="block whitespace-pre">
+              {renderLine(line)}
+            </span>
+          ))}
 
-        {typingState.lineIdx < CODE_LINES.length && (
-          <span className="block whitespace-pre">
-            {renderLine(CODE_LINES[typingState.lineIdx], typingState.charIdx)}
-            <span className="inline-block w-1.5 h-4 bg-zinc-400 align-middle animate-pulse ml-px"></span>
-          </span>
-        )}
+          {typingState.lineIdx < CODE_LINES.length && (
+            <span className="block whitespace-pre">
+              {renderLine(CODE_LINES[typingState.lineIdx], typingState.charIdx)}
+              <span className="inline-block w-1.5 h-4 bg-zinc-400 align-middle animate-pulse ml-px"></span>
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

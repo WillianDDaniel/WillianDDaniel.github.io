@@ -6,9 +6,12 @@
     "contact": "Contato"
   },
   "hero": {
+    "availability": "Disponível para novos projetos",
     "description": "Construindo o futuro da web com",
     "descriptionHighlight": "Criatividade, Código e Comprometimento.",
-    "cta-button-cv": "Baixar Currículo"
+    "subtext": "Desenvolvedor full-stack apaixonado por interfaces elegantes e código limpo. Transformando ideias em produtos digitais que as pessoas adoram usar.",
+    "cta-button-cv": "Baixar Currículo",
+    "cta-button-projects": "Ver Projetos"
   },
   "about": {
     "title": "Sobre mim",
