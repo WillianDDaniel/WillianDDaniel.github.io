@@ -1,0 +1,37 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "availability": "Disponible para nuevos proyectos",
+    "description": "Construyendo el futuro de la web con",
+    "descriptionHighlight": "Creatividad, Código y Compromiso.",
+    "subtext": "Desarrollador full-stack apasionado por las interfaces elegantes y el código limpio. Transformando ideas en productos digitales que a las personas les encanta usar.",
+    "cta-button-cv": "Descargar Currículum",
+    "cta-button-projects": "Ver Proyectos"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "nacionality": "Brasileño",
+    "age": "{{year}} Años",
+    "location": "Cachoeirinha - RS, Brasil",
+    "university": "Análisis y Desarrollo de Sistemas",
+    "bio": {
+      "title": "Desarrollador Web Full-Stack",
+      "paragraph1": "¡Hola! Soy un <strong>desarrollador Full Stack</strong> en transición de carrera, con 8 años de experiencia en el área de <strong>social media</strong> y atención al cliente. Mi viaje en el desarrollo comenzó como un pasatiempo que rápidamente se convirtió en mi pasión. Actualmente, estoy cursando <strong>Análisis y Desarrollo de Sistemas</strong> para formalizar y expandir mis conocimientos.",
+      "paragraph2": "Tengo una sólida comprensión de tecnologías front-end como <strong>React</strong>, <strong>JavaScript</strong>, <strong>CSS3</strong> y <strong>HTML5</strong>, utilizadas para crear interfaces dinámicas y responsivas que brindan experiencias de usuario excepcionales. Además, estoy constantemente explorando y aprendiendo más sobre <strong>Vue.js</strong>, <strong>Node.js</strong> y <strong>PHP</strong>, buscando expandir mi conjunto de habilidades."
+    },
+    "labels": {
+      "nacionality": "Nacionalidad",
+      "age": "Edad",
+      "location": "Ubicación",
+      "cursing": "Cursando"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados © {{year}} | Desarrollado con ❤️ por Willian D. Daniel"
+  }
+}

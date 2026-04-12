@@ -6,7 +6,7 @@ export default function Menu() {
 
   return (
     <ul className="
-      flex pr-8 items-center gap-6 text-gray-800 dark:text-gray-200 font-normal
+      flex items-center gap-6 text-gray-800 dark:text-gray-200 font-normal
     ">
       <li><a href="#hero">{t("menu.home")}</a></li>
       <li><a href="#about">{t("menu.about")}</a></li>

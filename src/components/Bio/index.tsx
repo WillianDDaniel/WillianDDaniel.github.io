@@ -1,0 +1,21 @@
+import { Trans, useTranslation } from "react-i18next";
+
+export default function Bio() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="
+      w-full md:w-8/12 bg-zinc-50/50 rounded-2xl p-8 md:p-10 
+      border border-zinc-100 flex flex-col justify-center
+    ">
+      <h3 className="text-2xl font-bold mb-6 text-zinc-900">
+        {t("about.bio.title")}
+      </h3>
+
+      <div className="space-y-5 text-zinc-600 text-sm leading-relaxed">
+        <p><Trans>{t("about.bio.paragraph1")}</Trans></p>
+        <p><Trans>{t("about.bio.paragraph2")}</Trans></p>
+      </div>
+    </div>
+  )
+}

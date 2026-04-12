@@ -16,7 +16,7 @@
   "about": {
     "title": "About me",
     "nacionality": "Brazilian",
-    "age": "{{year}} years old",
+    "age": "{{year}} Years Old",
     "location": "Cachoeirinha - RS, Brazil",
     "cursing": "Currently studying",
     "university": "Analysis and Systems Development",
@@ -24,6 +24,12 @@
       "title": "Full-Stack Web Developer",
       "paragraph1": "Hello! I am a <strong>Full Stack developer</strong> in career transition, with 8 years of experience in <strong>social media</strong> and customer service. My journey into development started as a hobby that quickly became my passion. Currently, I am studying <strong>Analysis and Systems Development</strong> to formalize and expand my knowledge.",
       "paragraph2": "I have a solid understanding of front-end technologies like <strong>React</strong>, <strong>JavaScript</strong>, <strong>CSS3</strong>, and <strong>HTML5</strong>, used to create dynamic and responsive interfaces that provide exceptional user experiences. Additionally, I am constantly exploring and learning more about <strong>Vue.js</strong>, <strong>Node.js</strong>, and <strong>PHP</strong>, seeking to expand my skill set."
+    },
+    "labels": {
+      "nacionality": "Nationality",
+      "age": "Age",
+      "location": "Location",
+      "cursing": "Currently Studying"
     }
   },
   "footer": {
