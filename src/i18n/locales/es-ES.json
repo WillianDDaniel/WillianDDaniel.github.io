@@ -31,6 +31,12 @@
       "cursing": "Cursando"
     }
   },
+  "projects": {
+    "readMore": "Seguir leyendo",
+    "showLess": "Mostrar menos",
+    "viewProject": "Ver Proyecto",
+    "code": "Código"
+  },
   "footer": {
     "rights": "Todos los derechos reservados © {{year}} | Desarrollado con ❤️ por Willian D. Daniel"
   }

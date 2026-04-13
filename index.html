@@ -28,6 +28,14 @@
   <meta name="twitter:description"
     content="Portfólio de Willian Daniel, Desenvolvedor de Software. Explore meus projetos, habilidades e experiências." />
   <meta name="twitter:image" content="https://seusite.com.br/twitter-image.jpg" />
+
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 
 <body>

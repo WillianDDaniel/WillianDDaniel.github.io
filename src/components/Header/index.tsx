@@ -6,8 +6,8 @@ export default function Header() {
     <header className="
       top-0 left-0 z-50
       flex items-center justify-between px-16
-      w-full h-14 bg-white dark:bg-zinc-950
-      shadow-sm dark:shadow-zinc-900 sticky
+      w-full h-14 bg-zinc-950
+      shadow-sm shadow-zinc-900 sticky
     ">
       <Logo />
       <Menu />

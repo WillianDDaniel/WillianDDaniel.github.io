@@ -6,7 +6,8 @@ export default function Footer() {
   return (
     <footer className="
       flex items-center justify-center
-      w-full h-14 bg-white dark:bg-gray-900 mt-auto
+      w-full h-14 bg-zinc-950 border-t border-zinc-800 text-sm text-zinc-400
+      shadow-sm shadow-zinc-900 sticky mt-auto
     ">
       {t("footer.rights", { year: new Date().getFullYear() })}
     </footer>

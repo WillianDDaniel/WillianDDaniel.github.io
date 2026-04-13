@@ -32,6 +32,12 @@
       "cursing": "Currently Studying"
     }
   },
+  "projects": {
+    "readMore": "Read more",
+    "showLess": "Show less",
+    "viewProject": "View Project",
+    "code": "Code"
+  },
   "footer": {
     "rights": "All rights reserved © {{year}} | Developed with ❤️ by Willian D. Daniel"
   }

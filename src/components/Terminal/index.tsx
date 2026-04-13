@@ -1,44 +1,44 @@
 import { useEffect, useState } from "react";
 
 const CODE_LINES = [
-  { text: "const developer: FullStack = {", color: "text-zinc-800" },
+  { text: "const developer: FullStack = {", color: "text-zinc-800 dark:text-zinc-300" },
   {
     text: '    name: "Willian Daniel",', parts: [
-      { t: "    name: ", c: "text-zinc-500" },
-      { t: '"Willian Daniel"', c: "text-amber-600" },
-      { t: ",", c: "text-zinc-800" },
+      { t: "    name: ", c: "text-zinc-500 dark:text-zinc-400" },
+      { t: '"Willian Daniel"', c: "text-amber-600 dark:text-amber-300" },
+      { t: ",", c: "text-zinc-800 dark:text-zinc-300" },
     ]
   },
   {
     text: '    role: "Software Engineer",', parts: [
-      { t: "    role: ", c: "text-zinc-500" },
-      { t: '"Software Engineer"', c: "text-amber-600" },
-      { t: ",", c: "text-zinc-800" },
+      { t: "    role: ", c: "text-zinc-500 dark:text-zinc-400" },
+      { t: '"Software Engineer"', c: "text-amber-600 dark:text-amber-300" },
+      { t: ",", c: "text-zinc-800 dark:text-zinc-300" },
     ]
   },
   { text: "" },
   {
     text: "    techStack: [", parts: [
-      { t: "    techStack: ", c: "text-zinc-500" },
-      { t: "[", c: "text-zinc-800" },
+      { t: "    techStack: ", c: "text-zinc-500 dark:text-zinc-400" },
+      { t: "[", c: "text-zinc-800 dark:text-zinc-300" },
     ]
   },
-  { text: '        "React.js", "TypeScript", "Node.js",', color: "text-emerald-600" },
-  { text: '        "Next.js", "Tailwind", "PostgreSQL"', color: "text-emerald-600" },
-  { text: "    ],", color: "text-zinc-800" },
+  { text: '        "React.js", "TypeScript", "Node.js",', color: "text-emerald-600 dark:text-emerald-400" },
+  { text: '        "Next.js", "Tailwind", "PostgreSQL"', color: "text-emerald-600 dark:text-emerald-400" },
+  { text: "    ],", color: "text-zinc-800 dark:text-zinc-300" },
   { text: "" },
   {
     text: "    build: () => {", parts: [
-      { t: "    ", c: "text-zinc-800" },
-      { t: "build", c: "text-indigo-600" },
-      { t: "() => {", c: "text-zinc-800" },
+      { t: "    ", c: "text-zinc-800 dark:text-zinc-300" },
+      { t: "build", c: "text-indigo-600 dark:text-indigo-400" },
+      { t: "() => {", c: "text-zinc-800 dark:text-zinc-300" },
     ]
   },
-  { text: "        return (", color: "text-zinc-800" },
-  { text: "            <InnovativeSolutions />", color: "text-orange-600" },
-  { text: "        );", color: "text-zinc-800" },
-  { text: "    }", color: "text-zinc-800" },
-  { text: "};", color: "text-zinc-800" },
+  { text: "        return (", color: "text-zinc-800 dark:text-zinc-300" },
+  { text: "            <InnovativeSolutions />", color: "text-orange-600 dark:text-orange-400" },
+  { text: "        );", color: "text-zinc-800 dark:text-zinc-300" },
+  { text: "    }", color: "text-zinc-800 dark:text-zinc-300" },
+  { text: "};", color: "text-zinc-800 dark:text-zinc-300" },
 ];
 
 export default function Terminal() {
@@ -91,20 +91,21 @@ export default function Terminal() {
   };
 
   return (
-    <div className="z-10 flex-1 rounded-br-xl border-zinc-200 flex items-center justify-end">
-      <div className="scale-y-95 w-full max-w-xl xl:max-w-2xl rounded-xl overflow-hidden bg-white border border-zinc-200 shadow-xl">
-        <div className="relative flex items-center px-4 py-2 bg-zinc-100 border-b border-zinc-200">
+    <div className="z-10 flex-1 rounded-br-xl flex items-center justify-end">
+      <div className="scale-y-95 w-full max-w-xl xl:max-w-2xl rounded-xl overflow-hidden bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-xl transition-colors duration-300">
+
+        <div className="relative flex items-center px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
           </div>
-          <span className="absolute left-1/2 -translate-x-1/2 text-zinc-500 text-xs font-mono font-medium">
+          <span className="absolute left-1/2 -translate-x-1/2 text-zinc-500 dark:text-zinc-400 text-xs font-mono font-medium transition-colors duration-300">
             portfolio.tsx
           </span>
         </div>
 
-        <div className="p-6 pl-10 text-[13px] leading-6 font-mono bg-gray-50 h-[calc(100vh-12rem)]">
+        <div className="p-6 pl-10 text-[13px] leading-6 font-mono bg-gray-50 dark:bg-zinc-900/40 h-[calc(100vh-12rem)] transition-colors duration-300">
           {CODE_LINES.slice(0, typingState.lineIdx).map((line, idx) => (
             <span key={idx} className="block whitespace-pre">
               {renderLine(line)}
@@ -114,7 +115,7 @@ export default function Terminal() {
           {typingState.lineIdx < CODE_LINES.length && (
             <span className="block whitespace-pre">
               {renderLine(CODE_LINES[typingState.lineIdx], typingState.charIdx)}
-              <span className="inline-block w-1.5 h-4 bg-zinc-400 align-middle animate-pulse ml-px"></span>
+              <span className="inline-block w-1.5 h-4 bg-zinc-400 dark:bg-zinc-500 align-middle animate-pulse ml-px"></span>
             </span>
           )}
         </div>
