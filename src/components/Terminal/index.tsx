@@ -91,7 +91,7 @@ export default function Terminal() {
   };
 
   return (
-    <div className="z-10 flex-1 rounded-br-xl flex items-center justify-end">
+    <div className="z-10 flex-1 rounded-br-xl flex items-center justify-center md:justify-end">
       <div className="scale-y-95 w-full max-w-xl xl:max-w-2xl rounded-xl overflow-hidden bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-xl transition-colors duration-300">
 
         <div className="relative flex items-center px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
@@ -105,7 +105,7 @@ export default function Terminal() {
           </span>
         </div>
 
-        <div className="p-6 pl-10 text-[13px] leading-6 font-mono bg-gray-50 dark:bg-zinc-900/40 h-[calc(100vh-12rem)] transition-colors duration-300">
+        <div className="p-4 md:p-6 pl-6 md:pl-10 text-[11px] md:text-[13px] leading-5 md:leading-6 font-mono bg-gray-50 dark:bg-zinc-900/40 h-64 md:h-[calc(100vh-12rem)] overflow-hidden transition-colors duration-300">
           {CODE_LINES.slice(0, typingState.lineIdx).map((line, idx) => (
             <span key={idx} className="block whitespace-pre">
               {renderLine(line)}

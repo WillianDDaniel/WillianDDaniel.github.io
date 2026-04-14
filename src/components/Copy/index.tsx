@@ -10,19 +10,19 @@ export default function Copy() {
         {t("hero.availability")}
       </div>
 
-      <span className="text-xl ml-0.5 text-zinc-600 dark:text-zinc-400 font-medium transition-colors duration-300">
+      <span className="text-lg md:text-xl ml-0.5 text-zinc-600 dark:text-zinc-400 font-medium transition-colors duration-300">
         {t("hero.description")}
       </span>
 
-      <h1 className="text-4xl font-bold tracking-tight leading-tight text-zinc-900 dark:text-white transition-colors duration-300 mt-2">
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-zinc-900 dark:text-white transition-colors duration-300 mt-2">
         {t("hero.descriptionHighlight")}
       </h1>
 
-      <p className="mt-5 text-lg text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed transition-colors duration-300">
+      <p className="mt-4 md:mt-5 text-base md:text-lg text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed transition-colors duration-300">
         {t("hero.subtext")}
       </p>
 
-      <div className="flex flex-wrap items-center gap-4 mt-8">
+      <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-6 md:mt-8 w-full">
         <button
           className="
             font-medium cursor-pointer bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 px-6 py-2.5
