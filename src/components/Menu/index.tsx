@@ -6,11 +6,25 @@ import ThemeToggle from "../ToggleTheme";
 export default function Menu() {
   const { t } = useTranslation();
 
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <ul className="
       flex items-center gap-6 text-gray-200 font-normal
     ">
-      <li><a href="#hero">{t("menu.home")}</a></li>
+
+      <li>
+        <a href="#hero" onClick={scrollToTop}>
+          {t("menu.home")}
+        </a>
+      </li>
+
       <li><a href="#about">{t("menu.about")}</a></li>
       <li><a href="#projects">{t("menu.projects")}</a></li>
       <li><a href="#contact">{t("menu.contact")}</a></li>

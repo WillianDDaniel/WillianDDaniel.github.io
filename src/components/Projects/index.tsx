@@ -7,7 +7,7 @@ export default function Projects() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/projects')
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects`)
       .then((res) => res.json())
       .then((data: Project[]) => setProjects(data))
       .catch((err) => console.error("Erro ao carregar projetos:", err));
