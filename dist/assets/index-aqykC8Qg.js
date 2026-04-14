@@ -25,9 +25,9 @@ Error generating stack: `+l.message+`
         p-2.5 rounded-full transition-colors duration-200 scale-80
         text-zinc-500 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200
         dark:text-zinc-400 dark:hover:text-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-700
-      `,"aria-label":"Alternar tema",children:r==="dark"?E.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[E.jsx("circle",{cx:"12",cy:"12",r:"4"}),E.jsx("path",{d:"M12 2v2"}),E.jsx("path",{d:"M12 20v2"}),E.jsx("path",{d:"m4.93 4.93 1.41 1.41"}),E.jsx("path",{d:"m17.66 17.66 1.41 1.41"}),E.jsx("path",{d:"M2 12h2"}),E.jsx("path",{d:"M20 12h2"}),E.jsx("path",{d:"m6.34 17.66-1.41 1.41"}),E.jsx("path",{d:"m19.07 4.93-1.41 1.41"})]}):E.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:E.jsx("path",{d:"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"})})})}function Op(){const{t:r}=la();return E.jsxs("ul",{className:`
+      `,"aria-label":"Alternar tema",children:r==="dark"?E.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[E.jsx("circle",{cx:"12",cy:"12",r:"4"}),E.jsx("path",{d:"M12 2v2"}),E.jsx("path",{d:"M12 20v2"}),E.jsx("path",{d:"m4.93 4.93 1.41 1.41"}),E.jsx("path",{d:"m17.66 17.66 1.41 1.41"}),E.jsx("path",{d:"M2 12h2"}),E.jsx("path",{d:"M20 12h2"}),E.jsx("path",{d:"m6.34 17.66-1.41 1.41"}),E.jsx("path",{d:"m19.07 4.93-1.41 1.41"})]}):E.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:E.jsx("path",{d:"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"})})})}function Op(){const{t:r}=la(),u=c=>{c.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})};return E.jsxs("ul",{className:`
       flex items-center gap-6 text-gray-200 font-normal
-    `,children:[E.jsx("li",{children:E.jsx("a",{href:"#hero",children:r("menu.home")})}),E.jsx("li",{children:E.jsx("a",{href:"#about",children:r("menu.about")})}),E.jsx("li",{children:E.jsx("a",{href:"#projects",children:r("menu.projects")})}),E.jsx("li",{children:E.jsx("a",{href:"#contact",children:r("menu.contact")})}),E.jsx("li",{children:E.jsx(zp,{})}),E.jsx("li",{children:E.jsx(Ep,{})})]})}function Tp(){return E.jsxs("header",{className:`
+    `,children:[E.jsx("li",{children:E.jsx("a",{href:"#hero",onClick:u,children:r("menu.home")})}),E.jsx("li",{children:E.jsx("a",{href:"#about",children:r("menu.about")})}),E.jsx("li",{children:E.jsx("a",{href:"#projects",children:r("menu.projects")})}),E.jsx("li",{children:E.jsx("a",{href:"#contact",children:r("menu.contact")})}),E.jsx("li",{children:E.jsx(zp,{})}),E.jsx("li",{children:E.jsx(Ep,{})})]})}function Tp(){return E.jsxs("header",{className:`
       top-0 left-0 z-50
       flex items-center justify-between px-16
       w-full h-14 bg-zinc-950
@@ -41,10 +41,10 @@ Error generating stack: `+l.message+`
             border border-zinc-200 dark:border-zinc-700 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors duration-300
             shadow-sm flex items-center gap-2
           `,children:r("hero.cta-button-projects")})]})]})}function Dp(){return E.jsxs("section",{id:"hero",className:`
-      flex items-stretch justify-center px-16 py-10
-      text-zinc-900 dark:text-zinc-100 w-full min-h-[calc(100vh-3.5rem)] relative gap-10
-      transition-colors duration-300
-    `,children:[E.jsx(Ap,{}),E.jsx(jp,{}),E.jsx(Np,{})]})}function Cp(r,u,c){const s=new Date,f=new Date(r,u,c),d=s.getFullYear()-f.getFullYear();return s.getMonth()>f.getMonth()||s.getMonth()===f.getMonth()&&s.getDate()>=f.getDate()?d:d-1}function Mp(){const{t:r}=la();return E.jsxs("div",{className:`
+        scroll-mt-14 flex items-stretch justify-center px-16 py-10
+        text-zinc-900 dark:text-zinc-100 w-full min-h-[calc(100vh-3.5rem)] relative gap-10
+        transition-colors duration-300
+      `,children:[E.jsx(Ap,{}),E.jsx(jp,{}),E.jsx(Np,{})]})}function Cp(r,u,c){const s=new Date,f=new Date(r,u,c),d=s.getFullYear()-f.getFullYear();return s.getMonth()>f.getMonth()||s.getMonth()===f.getMonth()&&s.getDate()>=f.getDate()?d:d-1}function Mp(){const{t:r}=la();return E.jsxs("div",{className:`
         relative w-full md:w-4/12 bg-white dark:bg-zinc-950 rounded-2xl shadow-sm 
         border border-zinc-200 dark:border-zinc-800 
         mt-24 md:mt-0 flex flex-col items-center px-6 pb-8 pt-24
@@ -78,7 +78,7 @@ Error generating stack: `+l.message+`
                 flex-1 text-center bg-white dark:bg-transparent border border-zinc-200 dark:border-zinc-700 
                 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 text-zinc-900 dark:text-zinc-100 
                 text-sm font-medium py-2.5 px-4 rounded-md transition-colors shadow-sm
-              `,children:s("projects.code")})]})]})]})}function Lp(){const[r,u]=it.useState([]),{t:c}=la();return it.useEffect(()=>{fetch("http://localhost:3000/api/projects").then(s=>s.json()).then(s=>u(s)).catch(s=>console.error("Erro ao carregar projetos:",s))},[]),E.jsxs("section",{id:"projects",className:`
+              `,children:s("projects.code")})]})]})]})}function Lp(){const[r,u]=it.useState([]),{t:c}=la();return it.useEffect(()=>{fetch("https://willian-d-daniel-portfolio.vercel.app/api/projects").then(s=>s.json()).then(s=>u(s)).catch(s=>console.error("Erro ao carregar projetos:",s))},[]),E.jsxs("section",{id:"projects",className:`
       flex flex-col items-center py-20 px-16 w-full 
       text-zinc-900 dark:text-zinc-100 
       transition-colors duration-300
