@@ -7,6 +7,7 @@ import SkeletonCard from '@/components/Skeleton';
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const { t } = useTranslation();
 
   useEffect(() => {

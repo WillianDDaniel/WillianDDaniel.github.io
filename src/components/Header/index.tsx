@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "@/components/Logo";
 import Menu from "@/components/Menu";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   return (
     <header className="sticky top-0 left-0 z-50 w-full bg-zinc-950 shadow-sm shadow-zinc-900">
-      <div className="flex items-center justify-between px-6 md:px-16 h-14">
+      <div className="flex items-center justify-between px-6 md:px-16 h-14 relative z-50 bg-zinc-950">
         <Logo />
 
         <button
@@ -25,7 +36,12 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96" : "max-h-0"}`}>
+      <div
+        className={`
+          md:hidden fixed top-14 left-0 w-full bg-zinc-950/95 backdrop-blur-md transition-all duration-300 z-40 flex flex-col
+          ${isOpen ? "h-[calc(100vh-3.5rem)] opacity-100 visible" : "h-0 opacity-0 invisible"}
+        `}
+      >
         <Menu mobile onClose={() => setIsOpen(false)} />
       </div>
     </header>
