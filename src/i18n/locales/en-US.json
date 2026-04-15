@@ -38,6 +38,32 @@
     "viewProject": "View Project",
     "code": "Code"
   },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "company": {
+        "label": "Company",
+        "placeholder": "Your company"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": " Your e-mail"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "placeholder": "Your WhatsApp number"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here..."
+      },
+      "submit": "Send Message"
+    }
+  },
   "footer": {
     "rights": "All rights reserved © {{year}} | Developed with ❤️ by Willian D. Daniel"
   }

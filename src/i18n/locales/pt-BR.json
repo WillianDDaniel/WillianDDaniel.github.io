@@ -37,6 +37,32 @@
     "viewProject": "Ver Projeto",
     "code": "Código"
   },
+  "contact": {
+    "title": "Contato",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome"
+      },
+      "company": {
+        "label": "Empresa",
+        "placeholder": "Sua empresa"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": " Seu e-mail"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "placeholder": "Seu número de WhatsApp"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Escreva sua mensagem aqui..."
+      },
+      "submit": "Enviar Mensagem"
+    }
+  },
   "footer": {
     "rights": "Todos os direitos reservados © {{year}} | Desenvolvido com ❤️ por Willian D. Daniel"
   }
