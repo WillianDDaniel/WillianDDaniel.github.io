@@ -25,7 +25,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="
-      flex flex-col items-center py-20 px-16 w-full 
+      flex flex-col items-center py-20 px-6 md:px-16 w-full 
       text-zinc-900 dark:text-zinc-100 
       transition-colors duration-300
     ">

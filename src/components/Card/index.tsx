@@ -27,7 +27,7 @@ export default function Card({ project }: { project: Project }) {
         <img
           src={project.imageUrl}
           alt={content.title}
-          className="w-full h-full object-cover object-top"
+          className="w-full h-auto md:h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-zinc-100/10 dark:bg-zinc-950/30 transition-opacity duration-300 group-hover:opacity-0" />
       </div>

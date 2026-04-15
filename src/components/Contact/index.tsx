@@ -6,7 +6,7 @@ export default function Contact() {
   const { t } = useTranslation();
 
   return (
-    <section id="contact" className="flex flex-col items-center py-20 px-16 w-full text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+    <section id="contact" className="flex flex-col items-center py-20 px-6 md:px-16 w-full text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
 
       <div className="mb-12 flex flex-col items-center">
         <h2 className="text-3xl font-bold tracking-tight">{t("contact.title")}</h2>
