@@ -13,7 +13,7 @@ export default function Bio() {
         {t("about.bio.title")}
       </h3>
 
-      <div className="space-y-5 text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed transition-colors duration-300">
+      <div className="space-y-5 text-justify text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed transition-colors duration-300">
         <p><Trans>{t("about.bio.paragraph1")}</Trans></p>
         <p><Trans>{t("about.bio.paragraph2")}</Trans></p>
       </div>
