@@ -60,7 +60,12 @@
         "label": "Mensagem",
         "placeholder": "Escreva sua mensagem aqui..."
       },
-      "submit": "Enviar Mensagem"
+      "submit": "Enviar Mensagem",
+      "messages": {
+        "success": "Mensagem enviada com sucesso!",
+        "validationError": "Por favor, preencha um e-mail ou número de WhatsApp.",
+        "genericError": "Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde."
+      }
     }
   },
   "footer": {

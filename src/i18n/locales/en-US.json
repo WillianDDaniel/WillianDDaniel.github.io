@@ -61,7 +61,12 @@
         "label": "Message",
         "placeholder": "Write your message here..."
       },
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "messages": {
+        "success": "Message sent successfully!",
+        "validationError": "Please fill in an email or WhatsApp number.",
+        "genericError": "An error occurred while sending the message. Please try again later."
+      }
     }
   },
   "footer": {
