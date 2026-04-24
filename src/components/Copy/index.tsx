@@ -41,15 +41,16 @@ export default function Copy() {
           </svg>
         </button>
 
-        <button
+        <a
           className="
             font-medium cursor-pointer bg-white dark:bg-transparent text-zinc-900 dark:text-zinc-100 px-6 py-2.5
             border border-zinc-200 dark:border-zinc-700 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors duration-300
             shadow-sm flex items-center gap-2
           "
+          href="#projects"
         >
           {t("hero.cta-button-projects")}
-        </button>
+        </a>
       </div>
     </div>
   )
