@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
+    "educations": "Educación",
     "contact": "Contacto"
   },
   "hero": {
@@ -36,6 +37,22 @@
     "showLess": "Mostrar menos",
     "viewProject": "Ver Proyecto",
     "code": "Código"
+  },
+  "educations": {
+    "title": "Educación",
+    "viewCertificate": "Ver Certificado",
+    "Educations": {
+      "types": {
+        "college": "Facultad",
+        "course": "Curso",
+        "certification": "Certificación",
+        "bootcamp": "Bootcamp"
+      }
+    },
+    "date": {
+      "present": "Presente"
+    },
+    "readMore": "Seguir leyendo"
   },
   "contact": {
     "title": "Contacto",

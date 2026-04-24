@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import Contact from "./components/Contact";
+import Educations from "./components/Educations";
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
       <Hero />
       <About />
       <Projects />
+      <Educations />
       <Contact />
       <Footer />
     </div>

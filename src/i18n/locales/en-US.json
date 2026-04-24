@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "educations": "Educations",
     "contact": "Contact"
   },
   "hero": {
@@ -37,6 +38,22 @@
     "showLess": "Show less",
     "viewProject": "View Project",
     "code": "Code"
+  },
+  "educations": {
+    "title": "Education",
+    "viewCertificate": "View Certificate",
+    "Educations": {
+      "types": {
+        "college": "College",
+        "course": "Course",
+        "certification": "Certification",
+        "bootcamp": "Bootcamp"
+      }
+    },
+    "date": {
+      "present": "Present"
+    },
+    "readMore": "Read more"
   },
   "contact": {
     "title": "Contact",
