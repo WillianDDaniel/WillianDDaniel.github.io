@@ -22,11 +22,17 @@ export default function EducationInfo({ currentEdu }: { currentEdu: Education })
   if (!content) return null;
 
   return (
-    <div className="w-full lg:w-1/2 p-8 flex flex-col justify-center">
-      <div className="flex items-center gap-3 mb-4 flex-wrap">
+    <div className="w-full lg:w-1/2 p-5 sm:p-8 flex flex-col justify-center">
+
+      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4 flex-wrap">
+        <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest transition-colors">
+          {content.institution}
+        </span>
+
         <span className="bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-300 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase transition-colors">
           {formatType(currentEdu.type)}
         </span>
+
         {currentEdu.durationHours && (
           <span className="text-zinc-500 dark:text-zinc-400 text-sm font-medium flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -37,15 +43,11 @@ export default function EducationInfo({ currentEdu }: { currentEdu: Education })
         )}
       </div>
 
-      <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-2 transition-colors">
-        {content.institution}
-      </span>
-
-      <h3 className="text-3xl font-bold mb-4 leading-tight transition-colors">
+      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 leading-tight transition-colors">
         {content.name}
       </h3>
 
-      <div className="mb-8 grow">
+      <div className="mb-4 sm:mb-8 grow">
         <p className={`text-zinc-600 dark:text-zinc-400 leading-relaxed transition-all duration-300 
             ${isExpanded
             ? 'max-h-28 overflow-y-auto pr-3 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-300 dark:scrollbar-thumb-zinc-700 scrollbar-thumb-rounded-full'
@@ -57,14 +59,14 @@ export default function EducationInfo({ currentEdu }: { currentEdu: Education })
 
         {!isExpanded && (
           <button onClick={() => setIsExpanded(true)}
-            className="text-blue-600 dark:text-blue-400 text-sm font-bold mt-2 hover:underline focus:outline-none"
+            className="text-blue-600 dark:text-blue-400 text-sm font-bold mt-1 sm:mt-2 hover:underline focus:outline-none"
           >
             {t('educations.readMore') || 'Continuar lendo'}
           </button>
         )}
       </div>
 
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-zinc-100 dark:border-zinc-800 pt-6 mt-auto transition-colors">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-zinc-100 dark:border-zinc-800 pt-4 sm:pt-6 mt-auto transition-colors">
         <div className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
           {formatDate(currentEdu.startDate)}
           {currentEdu.endDate ? ` — ${formatDate(currentEdu.endDate)}` : ` — ${t('educations.date.present')}`}

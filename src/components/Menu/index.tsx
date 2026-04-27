@@ -30,6 +30,7 @@ export default function Menu({ mobile = false, onClose }: MenuProps) {
         </li>
         <li><a href="#about" onClick={handleClick} className="hover:text-white transition-colors">{t("menu.about")}</a></li>
         <li><a href="#projects" onClick={handleClick} className="hover:text-white transition-colors">{t("menu.projects")}</a></li>
+        <li><a href="#educations" onClick={handleClick} className="hover:text-white transition-colors">{t("menu.educations")}</a></li>
         <li><a href="#contact" onClick={handleClick} className="hover:text-white transition-colors">{t("menu.contact")}</a></li>
 
         <li className="flex items-center gap-6 pt-8 mt-4 border-t border-zinc-800 w-3/4 justify-center">
