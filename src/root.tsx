@@ -19,21 +19,43 @@ export function links() {
   ];
 }
 
-export function meta() {
+export function meta({ params }: { params: { lang: string } }) {
+  const siteUrl = "https://willianddaniel.github.io";
+  const currentLang = params.lang || 'pt-br';
+
+  const seoText = {
+    'en': {
+      title: "Willian Daniel | Full-Stack Developer",
+      desc: "Willian Daniel's Portfolio, Full-Stack Software Developer. Explore my projects, skills, and experiences."
+    },
+    'es': {
+      title: "Willian Daniel | Desarrollador Full-Stack",
+      desc: "Portafolio de Willian Daniel, Desarrollador de Software Full-Stack. Explora mis proyectos, habilidades y experiencias."
+    },
+    'pt-br': {
+      title: "Willian Daniel | Desenvolvedor Full-Stack",
+      desc: "Portfólio de Willian Daniel, Desenvolvedor de Software Full-Stack. Explore meus projetos, habilidades e experiências."
+    }
+  };
+
+  const activeSeo = seoText[currentLang as keyof typeof seoText] || seoText['pt-br'];
+
   return [
-    { title: "Willian Daniel | Desenvolvedor" },
-    { name: "description", content: "Portfólio de Willian Daniel, Desenvolvedor de Software. Explore meus projetos, habilidades e experiências." },
+    { title: activeSeo.title },
+    { name: "description", content: activeSeo.desc },
     { name: "author", content: "Willian Daniel" },
     { name: "keywords", content: "Willian Daniel, Desenvolvedor, Portfólio, Front-end, Back-end, Fullstack, Programador, Web" },
+
     { property: "og:type", content: "website" },
-    { property: "og:title", content: "Willian Daniel | Desenvolvedor" },
-    { property: "og:description", content: "Portfólio de Willian Daniel, Desenvolvedor de Software. Explore meus projetos, habilidades e experiências." },
-    { property: "og:url", content: "https://seusite.com.br/" },
-    { property: "og:image", content: "https://seusite.com.br/og-image.jpg" },
+    { property: "og:title", content: activeSeo.title },
+    { property: "og:description", content: activeSeo.desc },
+    { property: "og:url", content: siteUrl },
+    { property: "og:image", content: `${siteUrl}/og-image.jpg` },
+
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "Willian Daniel | Desenvolvedor" },
-    { name: "twitter:description", content: "Portfólio de Willian Daniel, Desenvolvedor de Software. Explore meus projetos, habilidades e experiências." },
-    { name: "twitter:image", content: "https://seusite.com.br/twitter-image.jpg" },
+    { name: "twitter:title", content: activeSeo.title },
+    { name: "twitter:description", content: activeSeo.desc },
+    { name: "twitter:image", content: `${siteUrl}/og-image.jpg` },
   ];
 }
 
