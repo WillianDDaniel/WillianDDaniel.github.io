@@ -1,5 +1,5 @@
-import { render, screen, waitFor, fireEvent } from '@testing-library/react'
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { render, screen, fireEvent } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
 
 import Educations from '@/components/Educations'
 
@@ -16,70 +16,31 @@ vi.mock('@/components/EducationItem', () => ({
 }))
 
 describe('Educations Component', () => {
-  const mockEducations = [
+  const mockEducations: any[] = [
     { id: 'edu-1', title: 'Graduation' },
     { id: 'edu-2', title: 'Post-Graduation' },
     { id: 'edu-3', title: 'Certification' }
   ]
 
-  beforeEach(() => {
-    vi.stubEnv('VITE_API_URL', 'http://localhost:3000')
-    globalThis.fetch = vi.fn()
-  })
-
-  afterEach(() => {
-    vi.restoreAllMocks()
-    vi.unstubAllEnvs()
-  })
-
-  it('should render loading spinner initially', () => {
-    (globalThis.fetch as any).mockImplementation(() => new Promise(() => { }))
-    const { container } = render(<Educations />)
-
-    expect(container.querySelector('.animate-spin')).toBeInTheDocument()
-  })
-
-  it('should return null (empty DOM) if no educations are returned', async () => {
-    (globalThis.fetch as any).mockResolvedValueOnce({
-      json: async () => []
-    })
-
-    const { container } = render(<Educations />)
-
-    await waitFor(() => {
-      expect(container.querySelector('.animate-spin')).not.toBeInTheDocument()
-    })
-
+  it('should return null (empty DOM) if no educations are returned', () => {
+    const { container } = render(<Educations educations={[]} />)
     expect(container).toBeEmptyDOMElement()
   })
 
-  it('should render section and single item without navigation if array has length 1', async () => {
-    (globalThis.fetch as any).mockResolvedValueOnce({
-      json: async () => [mockEducations[0]]
-    })
+  it('should render section and single item without navigation if array has length 1', () => {
+    render(<Educations educations={[mockEducations[0]]} />)
 
-    render(<Educations />)
-
-    await waitFor(() => {
-      expect(screen.getByTestId('education-item')).toHaveTextContent('edu-1')
-    })
-
+    expect(screen.getByTestId('education-item')).toHaveTextContent('edu-1')
     expect(screen.getByText('Educação')).toBeInTheDocument()
 
     expect(screen.queryByLabelText('Próxima formação')).not.toBeInTheDocument()
     expect(screen.queryByLabelText('Formação anterior')).not.toBeInTheDocument()
   })
 
-  it('should render navigation controls and cycle through items correctly', async () => {
-    (globalThis.fetch as any).mockResolvedValueOnce({
-      json: async () => mockEducations
-    })
+  it('should render navigation controls and cycle through items correctly', () => {
+    render(<Educations educations={mockEducations} />)
 
-    render(<Educations />)
-
-    await waitFor(() => {
-      expect(screen.getByTestId('education-item')).toHaveTextContent('edu-1')
-    })
+    expect(screen.getByTestId('education-item')).toHaveTextContent('edu-1')
 
     const nextBtn = screen.getByLabelText('Próxima formação')
     const prevBtn = screen.getByLabelText('Formação anterior')
@@ -98,20 +59,5 @@ describe('Educations Component', () => {
 
     fireEvent.click(prevBtn)
     expect(screen.getByTestId('education-item')).toHaveTextContent('edu-3')
-  })
-
-  it('should handle fetch errors gracefully and stop loading', async () => {
-    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => { })
-      ; (globalThis.fetch as any).mockRejectedValueOnce(new Error('Network Error'))
-
-    const { container } = render(<Educations />)
-
-    await waitFor(() => {
-      expect(container.querySelector('.animate-spin')).not.toBeInTheDocument()
-    })
-
-    expect(consoleSpy).toHaveBeenCalledWith('Erro ao carregar formações:', expect.any(Error))
-
-    expect(container).toBeEmptyDOMElement()
   })
 })

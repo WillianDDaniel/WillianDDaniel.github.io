@@ -6,7 +6,8 @@ import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['build', 'coverage', 'src/tests']),
+  { ignores: ['build', 'coverage', 'src/tests'] },
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -19,5 +20,11 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowExportNames: ['meta', 'links', 'loader', 'action'] },
+      ],
+    }
   },
 ])

@@ -1,21 +1,28 @@
 import { useState, useRef, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useNavigate, useParams } from "react-router";
 
 interface LanguageSwitcherProps {
   mobile?: boolean;
 }
 
 export default function LanguageSwitcher({ mobile = false }: LanguageSwitcherProps) {
-  const { i18n } = useTranslation();
+
+  const navigate = useNavigate();
+  const { lang } = useParams();
+
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang);
-    setIsOpen(false);
-  };
+  const currentLanguage = lang === "en" ? "en-US"
+    : lang === "es" ? "es-ES" : "pt-BR";
 
-  const currentLanguage = i18n.language || "pt-BR";
+  const handleLanguageChange = (fullLang: string) => {
+    setIsOpen(false);
+
+    if (fullLang === "pt-BR") navigate("/");
+    else if (fullLang === "en-US") navigate("/en");
+    else if (fullLang === "es-ES") navigate("/es");
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -74,14 +81,18 @@ export default function LanguageSwitcher({ mobile = false }: LanguageSwitcherPro
           z-50 py-1 overflow-hidden animate-in fade-in slide-in-from-top-2
           ${mobile ? "left-1/2 -translate-x-1/2 origin-top" : "right-0 origin-top-right"}
         `}>
-          {["pt-BR", "en-US", "es-ES"].map((lang) => {
-            const labels: Record<string, string> = { "pt-BR": "Português (BR)", "en-US": "English (US)", "es-ES": "Español (ES)" };
-            const isActive = currentLanguage.includes(lang.split('-')[0]);
+          {["pt-BR", "en-US", "es-ES"].map((fullLang) => {
+            const labels: Record<string, string> = {
+              "pt-BR": "Português (BR)",
+              "en-US": "English (US)",
+              "es-ES": "Español (ES)"
+            };
+            const isActive = currentLanguage === fullLang;
 
             return (
               <button
-                key={lang}
-                onClick={() => handleLanguageChange(lang)}
+                key={fullLang}
+                onClick={() => handleLanguageChange(fullLang)}
                 className={`
                   w-full text-left px-4 py-2 text-sm transition-colors duration-150
                   ${isActive
@@ -89,7 +100,7 @@ export default function LanguageSwitcher({ mobile = false }: LanguageSwitcherPro
                     : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 hover:text-zinc-900 dark:hover:text-zinc-100"}
                 `}
               >
-                {labels[lang]}
+                {labels[fullLang]}
               </button>
             )
           })}

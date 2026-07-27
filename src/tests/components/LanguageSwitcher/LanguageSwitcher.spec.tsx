@@ -2,15 +2,11 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const mockChangeLanguage = vi.fn();
+const mockNavigate = vi.fn();
 
-vi.mock("react-i18next", () => ({
-  useTranslation: () => ({
-    i18n: {
-      language: "pt-BR",
-      changeLanguage: mockChangeLanguage,
-    },
-  }),
+vi.mock("react-router", () => ({
+  useNavigate: () => mockNavigate,
+  useParams: () => ({ lang: undefined }),
 }));
 
 describe("LanguageSwitcher Component", () => {
@@ -38,7 +34,7 @@ describe("LanguageSwitcher Component", () => {
     expect(screen.queryByText("English (US)")).not.toBeInTheDocument();
   });
 
-  it("should call changeLanguage and close dropdown when an option is selected", () => {
+  it("should call navigate and close dropdown when an option is selected", () => {
     render(<LanguageSwitcher />);
 
     const toggleButton = screen.getByRole("button", { name: /PT-BR/i });
@@ -47,8 +43,8 @@ describe("LanguageSwitcher Component", () => {
     const englishOption = screen.getByText("English (US)");
     fireEvent.click(englishOption);
 
-    expect(mockChangeLanguage).toHaveBeenCalledWith("en-US");
-    expect(mockChangeLanguage).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith("/en");
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
 
     expect(screen.queryByText("English (US)")).not.toBeInTheDocument();
   });

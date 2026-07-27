@@ -1,27 +1,12 @@
-import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Card from '@/components/Card';
-import SkeletonCard from '@/components/Skeleton';
 
-export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+interface ProjectsProps {
+  projects: Project[];
+}
 
+export default function Projects({ projects }: ProjectsProps) {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/projects`)
-      .then((res) => res.json())
-      .then((data: Project[]) => {
-        setProjects(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error("Erro ao carregar projetos:", err);
-        setIsLoading(false);
-      });
-  }, []);
 
   return (
     <section id="projects" className="
@@ -36,16 +21,9 @@ export default function Projects() {
       </div>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-        {isLoading ? (
-          <>
-            <SkeletonCard />
-            <SkeletonCard />
-          </>
-        ) : (
-          projects.map((project) => (
-            <Card key={project.id} project={project} />
-          ))
-        )}
+        {projects.map((project) => (
+          <Card key={project.id} project={project} />
+        ))}
       </div>
 
     </section>

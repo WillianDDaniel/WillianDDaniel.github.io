@@ -1,26 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EducationItem from '@/components/EducationItem';
 
-export default function Educations() {
-  const [educations, setEducations] = useState<Education[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+interface EducationsProps {
+  educations: Education[];
+}
+
+export default function Educations({ educations }: EducationsProps) {
+
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const { t } = useTranslation();
-
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/educations`)
-      .then((res) => res.json())
-      .then((data: Education[]) => {
-        setEducations(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error("Erro ao carregar formações:", err);
-        setIsLoading(false);
-      });
-  }, []);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % educations.length);
@@ -30,15 +19,7 @@ export default function Educations() {
     setCurrentIndex((prev) => (prev - 1 + educations.length) % educations.length);
   };
 
-  if (isLoading) {
-    return (
-      <section className="flex flex-col items-center py-20 px-6 w-full text-zinc-900 dark:text-zinc-100 min-h-150 justify-center">
-        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-zinc-900 dark:border-zinc-100"></div>
-      </section>
-    );
-  }
-
-  if (educations.length === 0) return null;
+  if (!educations || educations.length === 0) return null;
 
   return (
     <section id="educations" className="
